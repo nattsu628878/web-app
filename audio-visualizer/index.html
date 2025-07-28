@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Visualizer</h1>
+        <input type="file" id="audioInput" accept=".wav">
+        <button id="processButton">Start Processing</button>
+        
+        <!-- モード切り替えボタンを追加 -->
+        <div class="mode-selector" style="display: none;">
+            <button class="mode-button active" data-mode="spectrum">Spectrum Mode</button>
+            <button class="mode-button" data-mode="waveform">Waveform Mode</button>
+        </div>
+
+        <div class="preview">
+            <h3>Preview</h3>
+            <canvas id="spectrumCanvas"></canvas>
+        </div>
+        <br>            
+        <div id="status"></div>
+
+        <!-- スペクトラム設定パネル -->
+        <div id="spectrumSettings" class="settings">
+            <h3>Spectrum Settings</h3>
+            <div>
+                <label for="fftSize">FFT Size:</label>
+                <select id="fftSize">
+                    <option value="512">512</option>
+                    <option value="1024">1024</option>
+                    <option value="2048" selected>2048</option>
+                    <option value="4096">4096</option>
+                </select>
+            </div>
+            <label>Frequency Range: <span id="freqRangeText">20Hz - 14400Hz</span></label>
+            <div class="range-slider">
+                <input type="range" 
+                    id="minFreqRange" 
+                    min="0" 
+                    max="24000" 
+                    value="20" 
+                    step="10">
+                <input type="range" 
+                    id="maxFreqRange" 
+                    min="0" 
+                    max="24000" 
+                    value="14400" 
+                    step="10">
+            </div>
+            <br>
+            <div>
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" value="#000000">
+            </div>
+            <div>
+                <label for="barColor">Bar Color:</label>
+                <input type="color" id="barColor" value="#ffffff">
+            </div>
+            <br>
+            <div>
+                <label for="barCount">Number of Bars:</label>
+                <span class="range-slider">
+                    <input type="number" id="barCount" value="64" min="16" max="256">
+                </span>
+                <span class="note" style="opacity: 0.6">(Recommended:16-256)</span>
+            </div>
+            <div>
+                <label for="barWidth">Bar Width: <span id="barWidthText">90%</span></label>
+                <div class="range-slider">
+                    <input type="range" id="barWidth" min="10" max="100" value="90" step="5">
+                </div>
+            </div>
+            <br>
+            <div>
+                <label for="spectrumStyle">Display Style:</label>
+                <select id="spectrumStyle">
+                    <option value="normal">Normal</option>
+                    <option value="center">Center (Up/Down)</option>
+                    <option value="circular">Circular</option>
+                    <option value="liner">Liner</option>
+                </select>
+            </div>
+            <div>
+                <label for="amplitudeScale">Amplitude Scale: <span id="amplitudeScaleText">100%</span></label>
+                <div class="range-slider">
+                    <input type="range" id="amplitudeScale" min="10" max="200" value="100" step="10">
+                </div>
+            </div>
+        </div>
+
+        <!-- 波形設定パネル -->
+        <div id="waveformSettings" class="settings" style="display: none;">
+            <h3>Waveform Settings</h3>
+            <div>
+                <label for="waveColor">Wave Color:</label>
+                <input type="color" id="waveColor" value="#ffffff">
+            </div>
+            <div>
+                <label for="waveBackground">Background Color:</label>
+                <input type="color" id="waveBackground" value="#000000">
+            </div>
+            <br>
+            <div>
+                <label for="waveStyle">Display Style:</label>
+                <select id="waveStyle">
+                    <option value="line">Line</option>
+                    <option value="fill">Fill</option>
+                </select>
+            </div>
+            <div>
+                <label for="waveAmplitude">Amplitude Scale: <span id="waveAmplitudeText">100%</span></label>
+                <div class="range-slider">
+                    <input type="range" id="waveAmplitude" min="10" max="200" value="100" step="10">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    font-family: "DotGothic16", sans-serif;
+    background: #628878;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px;
+    background: #628878;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background: #886272;
+  }
+  
+  #downloadLink {
+    display: block;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    background: #628878;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  #downloadLink:hover {
+    background: #886272;
+  }
+  

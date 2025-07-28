@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #628878;
+    color: white;
+    font-family: "DotGothic16", sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+canvas {
+    width: 100%;
+    height: 400px;
+    background-color: #1e2826;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #886272;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4e6c62;
+}
+
+.range-slider {
+    margin-top: 10px;
+    position: relative;
+    width: 200px;
+    height: 20px;
+}
+
+.range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    appearance: none;
+    height: 4px;
+    background: #4e6c62;
+    outline: none;
+    border-radius: 2px;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #628878;
+    cursor: pointer;
+}
+
+/* 上のスライダーを下のスライダーより手前に表示 */
+.range-slider input[type="range"]:nth-child(1) {
+    z-index: 2;
+}
+
+.settings {
+    background: #394a46;
+    padding: 15px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.settings h3 {
+    margin-bottom: 10px;
+    color: #a0c1b8;
+    font-family: "DotGothic16", sans-serif;
+}
+
+.preview {
+    background: #394a46;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.preview h3 {
+    margin-bottom: 10px;
+    color: #a0c1b8;
+}
+
+/* 数値とテキスト表示のスタイル */
+#freqRangeText,
+#barWidthText,
+#barCountText,
+input[type="number"],
+select,
+button {
+    font-family: "DotGothic16", sans-serif;
+}
+
+/* モード選択ボタンのスタイル */
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.mode-button {
+    padding: 10px 20px;
+    background-color: #4e6c62;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "DotGothic16", sans-serif;
+}
+
+.mode-button.active {
+    background-color: #628878;
+    transform: scale(1.05);
+}

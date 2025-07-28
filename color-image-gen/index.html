@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <title>color-image-gen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>color-image-gen</h1>
+    <form id="imageForm">
+      <label>
+        color code:
+        <input type="text" id="color" value="#628878" required />
+      </label>
+      <label>
+        width (px):
+        <input type="number" id="width" value="300" required />
+      </label>
+      <label>
+        height (px):
+        <input type="number" id="height" value="200" required />
+      </label>
+    </form>
+
+    <a id="downloadLink" download="image.png">download</a>
+
+    <div id="previewContainer" style="text-align:center; margin-top:16px;">
+      <span style="font-size:0.9em; color:#666;">preview</span><br>
+      <canvas id="previewCanvas" width="100" height="66" style="border:1px solid #ccc; background:#fff;"></canvas>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
